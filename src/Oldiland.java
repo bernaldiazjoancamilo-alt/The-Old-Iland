@@ -9,14 +9,14 @@ public class Oldiland {
         Scanner teclado = new Scanner(System.in);
         Random random = new Random();
 
-        //  Estos son los codigos ANSI para los colores usados en las tablas y los menasjes.
-        final String RESET = "\u001B[0m";
-        final String VERDE = "\u001B[32m";
-        final String ROJO = "\u001B[31m";
-        final String AZUL = "\u001B[34m";
-        final String AMARILLO = "\u001B[33m";
-        final String CIAN = "\u001B[36m";
-        final String NEGRITA = "\u001B[1m";
+     //  Estos son los codigos ANSI para los colores usados en las tablas y los menasjes.
+    final String RESET = "\u001B[0m";
+    final String VERDE = "\u001B[32m";
+    final String ROJO = "\u001B[31m";
+    final String AZUL = "\u001B[34m";
+    final String AMARILLO = "\u001B[33m";
+    final String CIAN = "\u001B[36m";
+    final String NEGRITA = "\u001B[1m";
 
 
         int salud = 100;
@@ -116,27 +116,32 @@ public class Oldiland {
                     if (energia >= 20) {
                         energia -= 20;
 
-                        int resultado = random.nextInt(3);
+                int resultado = random.nextInt(3);
 
-                       if (resultado == 0) {
+                    if (resultado == 0) {
                         cantidadesMateriales[0] += 2;
-                            System.out.println(VERDE
-                                    + "Has encontrado 2 trozos de madera."
-                                    + RESET);
-                        } else if (resultado == 1) {
-                           } else if (resultado == 1) {
-                            cantidadesMateriales[1] += 1;
-                        } else {
-                            salud -= 10;
-                            System.out.println(ROJO
-                                    + "Te has lastimado. Pierdes 10 de salud."
-                                    + RESET);
-                        }
-                    } else {
-                        System.out.println(ROJO
-                                + "No tienes energia suficiente." + RESET);
-                    }
-                    break;
+                        System.out.println(VERDE
+                             + "Has encontrado 2 trozos de madera."
+                             + RESET);
+
+            }        else if (resultado == 1) {
+                        cantidadesMateriales[1] += 1;
+                        System.out.println(VERDE
+                            + "Has encontrado una cuerda."
+                         + RESET);
+
+        }        else {
+                    salud -= 10;
+                    System.out.println(ROJO
+                    + "Te has lastimado. Pierdes 10 de salud."
+                    + RESET);
+        }
+
+    } else {
+        System.out.println(ROJO
+                + "No tienes energia suficiente." + RESET);
+    }
+    break;
 
                 case 4:
                     energia += 30;
