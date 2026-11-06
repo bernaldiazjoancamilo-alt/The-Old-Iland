@@ -18,13 +18,17 @@ public class Oldiland {
         final String CIAN = "\u001B[36m";
         final String NEGRITA = "\u001B[1m";
 
-        // Esto es lo que tiene inicialmente el jugador al empezar la partida.
+
         int salud = 100;
         int energia = 100;
         int comida = 2;
         int agua = 2;
         int madera = 0;
         int cuerda = 0;
+
+    // Inventario de materiales co arrays
+     String[] materiales = {"Madera", "Cuerda"};
+     int[] cantidadesMateriales = {0, 0};
 
         boolean jugando = true;
 
@@ -52,8 +56,11 @@ public class Oldiland {
             System.out.printf(AMARILLO + "║ %-14s ║ %15d ║%n", "Energia", energia);
             System.out.printf(VERDE + "║ %-14s ║ %15d ║%n", "Comida", comida);
             System.out.printf(AZUL + "║ %-14s ║ %15d ║%n", "Agua", agua);
-            System.out.printf(CIAN + "║ %-14s ║ %15d ║%n", "Madera", madera);
-            System.out.printf(CIAN + "║ %-14s ║ %15d ║%n", "Cuerda", cuerda);
+           // Recorrer el array para mostrar los materiales
+            for (int i = 0; i < materiales.length; i++) {
+            System.out.printf(CIAN + "║ %-14s ║ %15d ║%n",
+            materiales[i], cantidadesMateriales[i]);
+}
 
             System.out.println(RESET + "╚════════════════╩═════════════════╝");
 
@@ -111,15 +118,14 @@ public class Oldiland {
 
                         int resultado = random.nextInt(3);
 
-                        if (resultado == 0) {
-                            madera += 2;
+                       if (resultado == 0) {
+                        cantidadesMateriales[0] += 2;
                             System.out.println(VERDE
                                     + "Has encontrado 2 trozos de madera."
                                     + RESET);
                         } else if (resultado == 1) {
-                            cuerda += 1;
-                            System.out.println(VERDE
-                                    + "Has encontrado una cuerda." + RESET);
+                           } else if (resultado == 1) {
+                            cantidadesMateriales[1] += 1;
                         } else {
                             salud -= 10;
                             System.out.println(ROJO
@@ -145,9 +151,10 @@ public class Oldiland {
                     break;
 
                 case 5:
-                    if (madera >= 5 && cuerda >= 3) {
-                        madera -= 5;
-                        cuerda -= 3;
+                    if (cantidadesMateriales[0] >= 5 &&
+                        cantidadesMateriales[1] >= 3) {
+                        cantidadesMateriales[0] -= 5;
+                        cantidadesMateriales[1] -= 3;
 
                         System.out.println(VERDE + NEGRITA
                                 + "¡Has construido una balsa!"

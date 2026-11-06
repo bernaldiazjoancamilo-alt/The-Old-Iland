@@ -1,0 +1,23 @@
+# Archivos compilados de Java
+*.class
+*.jar
+
+# Carpetas de compilacion
+bin/
+out/
+build/
+
+# Configuracion personal del editor
+.vscode/
+
+# Archivos temporales
+*.tmp
+*.log
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de configuracion privada
+.env
