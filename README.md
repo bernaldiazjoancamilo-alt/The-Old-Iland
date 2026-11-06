@@ -59,7 +59,17 @@ javac Oldiland.java
 
 Ejecutar el juego en el bash:
 
+javac -d bin src/Oldiland.java
+
+java -cp bin Oldiland
+
 java Oldiland
+
+## Condiciones de victoria y derrota
+
+Victoria: conseguir 5 unidades de madera y 3 de cuerda para construir una balsa.
+
+Derrota: perder todos los puntos de salud.
 
 
 ## Autor
